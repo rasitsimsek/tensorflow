@@ -39,7 +39,10 @@ if(WIN32)
       $<$<BOOL:${tensorflow_ENABLE_GPU}>:$<TARGET_OBJECTS:tf_stream_executor>>
   )
 
-  add_dependencies(tensorflow_static tf_protos_cc)
+  #add_dependencies(tensorflow_static tf_protos_cc)
+  target_link_libraries(tensorflow_static PRIVATE ${tensorflow_EXTERNAL_LIBRARIES} tf_protos_cc )
+  
+  
   set(tensorflow_static_dependencies
       $<TARGET_FILE:tensorflow_static>
       $<TARGET_FILE:tf_protos_cc>

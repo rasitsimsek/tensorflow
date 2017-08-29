@@ -21,6 +21,7 @@ DeviceBase::~DeviceBase() {}
 
 const DeviceAttributes& DeviceBase::attributes() const {
   LOG(FATAL) << "Device does not implement attributes()";
+  return m_oEmptyDA;
 }
 
 }  // namespace tensorflow

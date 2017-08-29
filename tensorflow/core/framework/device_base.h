@@ -220,6 +220,7 @@ class DeviceBase {
 #ifdef TENSORFLOW_USE_SYCL
   Eigen::SyclDevice* eigen_sycl_device_ = nullptr;
 #endif
+  DeviceAttributes m_oEmptyDA;
 };
 
 }  // namespace tensorflow
